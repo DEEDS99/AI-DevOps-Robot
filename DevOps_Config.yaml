@@ -1,4 +1,4 @@
-github_username: your_github_username
+github_username: DEEDS99
 default_branch: main
 auto_deploy: true
 
@@ -8,7 +8,7 @@ hosting_platforms:
     deploy_hook_url: ""   # paste your Vercel Deploy Hook URL
   render:
     enabled: false
-    service_id: ""        # paste your Render Service ID
+    service_id: "dpg-d2c26hruibrs738263l0-a"        
   netlify:
     enabled: false
     deploy_hook_url: ""   # paste your Netlify Build Hook URL
