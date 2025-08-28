@@ -1,0 +1,23 @@
+name: Deploy (Hooks)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel (if configured)
+        if: ${{ secrets.VERCEL_DEPLOY_HOOK != '' }}
+        run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
+
+      - name: Trigger Render (if configured)
+        if: ${{ secrets.RENDER_SERVICE_ID != '' && secrets.RENDER_TOKEN != '' }}
+        run: |
+          curl -X POST "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys" \
+          -H "Authorization: Bearer ${{ secrets.RENDER_TOKEN }}"
+
+      - name: Trigger Netlify (if configured)
+        if: ${{ secrets.NETLIFY_BUILD_HOOK != '' }}
+        run: curl -X POST "${{ secrets.NETLIFY_BUILD_HOOK }}"
