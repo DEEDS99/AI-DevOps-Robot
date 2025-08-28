@@ -1,0 +1,20 @@
+github_username: your_github_username
+default_branch: main
+auto_deploy: true
+
+hosting_platforms:
+  vercel:
+    enabled: false
+    deploy_hook_url: ""   # paste your Vercel Deploy Hook URL
+  render:
+    enabled: false
+    service_id: ""        # paste your Render Service ID
+  netlify:
+    enabled: false
+    deploy_hook_url: ""   # paste your Netlify Build Hook URL
+
+commit_message_templates:
+  - "🚀 Auto-deploy: {description}"
+  - "📝 Update: {description}"
+  - "🔧 Fix: {description}"
+  - "✨ Feature: {description}"
