@@ -7,7 +7,7 @@ hosting_platforms:
     enabled: false
     deploy_hook_url: ""   # paste your Vercel Deploy Hook URL
   render:
-    enabled: false
+    enabled: true
     service_id: "dpg-d2c26hruibrs738263l0-a"        
   netlify:
     enabled: false
